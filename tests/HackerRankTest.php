@@ -1,4 +1,5 @@
 <?php
+
 namespace Shipu\Themevel\Tests;
 
 class HackerRankTest extends TestCase

@@ -22,10 +22,10 @@ class HackerRankServiceProvider extends ServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__ . '/../config/hackerrank.php');
+        $source = realpath(__DIR__.'/../config/hackerrank.php');
         // Check if the application is a Laravel OR Lumen instance to properly merge the configuration file.
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
-            $this->publishes([ $source => config_path('hackerrank.php') ]);
+            $this->publishes([$source => config_path('hackerrank.php')]);
         } elseif ($this->app instanceof LumenApplication) {
             $this->app->configure('hackerrank');
         }

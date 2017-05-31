@@ -8,27 +8,28 @@ class Checker extends AbstractApi
 {
     /**
      * Checker constructor.
+     *
      * @param $config
      */
-    function __construct($config)
+    public function __construct($config)
     {
         $this->config = $config;
         parent::__construct();
     }
 
     /**
-     * Submit Code with test cases
+     * Submit Code with test cases.
      *
      * @param $lang
      * @param $source
-     * @param array $testcases
+     * @param array  $testcases
      * @param string $format
-     * @param bool $wait
+     * @param bool   $wait
      * @param string $callback_url
      *
      * @return Response
      */
-    public function submission($lang, $source, $testcases = [ "1" ], $format = 'json', $wait = true, $callback_url = '')
+    public function submission($lang, $source, $testcases = ['1'], $format = 'json', $wait = true, $callback_url = '')
     {
         if (!is_numeric($lang)) {
             $allLang = $this->languages();
@@ -40,17 +41,17 @@ class Checker extends AbstractApi
         $data = [
             'lang'         => $lang,
             'testcases'    => json_encode($testcases),
-            "source"       => $source,
-            "format"       => $format,
-            "wait"         => $wait,
-            "callback_url" => $callback_url,
+            'source'       => $source,
+            'format'       => $format,
+            'wait'         => $wait,
+            'callback_url' => $callback_url,
         ];
 
         return $this->post('checker/submission.json', $data);
     }
 
     /**
-     * List of all languages
+     * List of all languages.
      *
      * @return Response
      */
@@ -58,5 +59,4 @@ class Checker extends AbstractApi
     {
         return $this->get('checker/languages.json');
     }
-
 }
