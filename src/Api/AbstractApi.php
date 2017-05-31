@@ -11,7 +11,6 @@ use Shipu\HackerRank\HttpManager\Response;
 
 abstract class AbstractApi
 {
-
     protected $client;
     protected $apiKey;
     protected $parameters = [];
@@ -26,8 +25,7 @@ abstract class AbstractApi
         'PATCH',
     ];
 
-
-    function __construct()
+    public function __construct()
     {
         $this->apiKey = $this->config['api_key'];
         $this->client = new RequestHandler();
@@ -45,14 +43,14 @@ abstract class AbstractApi
                 $this->formParams($params[1]);
             }
 
-            return call_user_func_array([ $this, 'makeMethodRequest' ], $parameters);
+            return call_user_func_array([$this, 'makeMethodRequest'], $parameters);
         }
     }
 
     public function formParams($params = [])
     {
         if (is_array($params)) {
-            $this->parameters['form_params']            = $params;
+            $this->parameters['form_params'] = $params;
             $this->parameters['form_params']['api_key'] = $this->apiKey;
 
             return $this;
@@ -86,7 +84,7 @@ abstract class AbstractApi
     public function makeMethodRequest($method, $uri)
     {
         $this->parameters['timeout'] = 60;
-        $defaultHeaders              = [
+        $defaultHeaders = [
             'User-Agent' => $_SERVER['HTTP_USER_AGENT'],
         ];
 
@@ -110,5 +108,4 @@ abstract class AbstractApi
             return $e;
         }
     }
-
 }

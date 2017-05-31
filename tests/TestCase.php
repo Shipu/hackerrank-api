@@ -1,4 +1,5 @@
 <?php
+
 namespace Shipu\Themevel\Tests;
 
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
