@@ -1,7 +1,7 @@
 {
     "name": "shipu/hackerrank-api",
-    "description": "PHP client for HackerRank API",
-    "keywords": ["laravel"],
+    "description": "PHP and Laravel HackerRank Code Checker API",
+    "keywords": ["Hackerrank", "code", "checker","online", "judge", "laravel"],
     "type": "library",
     "license": "CC(1.0)",
     "homepage": "http://shipuahamed.com",
@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.6",
-        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "graham-campbell/testbench": "^3.3",
