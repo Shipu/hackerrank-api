@@ -26,6 +26,16 @@
         "files": [
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shipu\\HackerRank\\HackerRankServiceProvider"
+            ],
+            "aliases": {
+                "HackerRank": "Shipu\\HackerRank\\Facades\\HackerRank"
+            }
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
