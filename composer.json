@@ -3,7 +3,7 @@
     "description": "PHP and Laravel HackerRank Code Checker API",
     "keywords": ["Hackerrank", "code", "checker","online", "judge", "laravel"],
     "type": "library",
-    "license": "CC(1.0)",
+    "license": "MIT",
     "homepage": "http://shipuahamed.com",
     "authors": [
         {
